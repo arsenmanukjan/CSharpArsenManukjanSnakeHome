@@ -6,7 +6,7 @@ namespace CSharpArsenManukjanSnake
 {
     class Snake : Figure
     {
-        Direction direction;
+        private Direction direction;
         public Snake(Point tail, int length, Direction _direction)
         {
             direction = _direction;
@@ -34,6 +34,27 @@ namespace CSharpArsenManukjanSnake
             Point nextPoint = new Point(head);
             nextPoint.Move(1, direction);
             return nextPoint;
+        }
+        public void HandleKey()
+        {
+            if (Console.KeyAvailable)
+            {
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        direction = Direction.UP;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        direction = Direction.DOWN;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        direction = Direction.LEFT;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        direction = Direction.RIGHT;
+                        break;
+                }
+            }
         }
     }
 }

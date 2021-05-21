@@ -10,7 +10,7 @@ namespace CSharpArsenManukjanSnake
     {
         static void Main(string[] args)
         {
-
+            Console.CursorVisible = false; // убираю мерцающий курсор 
             Point p1 = new Point(1, 3, '*');
             p1.Draw();
             Console.SetWindowSize(80, 25);  // пришлось добавить, потому что не запускалось с SetBufferSize
@@ -37,8 +37,12 @@ namespace CSharpArsenManukjanSnake
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
-            snake.Move();
-            Console.ReadLine();
+            while (true)
+            {
+                snake.HandleKey(); 
+                snake.Move();
+                System.Threading.Thread.Sleep(200);
+            }
         }
     }
 }
