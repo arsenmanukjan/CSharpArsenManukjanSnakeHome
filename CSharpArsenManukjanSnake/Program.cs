@@ -11,7 +11,7 @@ namespace CSharpArsenManukjanSnake
         static void Main(string[] args)
         {
             Console.SetWindowSize(80, 25);  // пришлось добавить, потому что не запускалось с SetBufferSize
-            Console.SetBufferSize(80, 25);
+            Console.SetBufferSize(80, 25);  // проверка
 
             // Отрисовка рамочки
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
