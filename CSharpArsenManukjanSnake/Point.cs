@@ -60,5 +60,9 @@ namespace CSharpArsenManukjanSnake
             return x + ", " + y + ", " + sym;
 
         }
+        public bool IsHit(Point p)
+        {
+            return p.x == x && p.y == y;
+        }
     }
 }
