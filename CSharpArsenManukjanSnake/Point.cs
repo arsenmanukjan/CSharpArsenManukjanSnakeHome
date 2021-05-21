@@ -22,7 +22,7 @@ namespace CSharpArsenManukjanSnake
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
-            Console.Write( sym );
+            Console.Write( sym );   
         }
     }
 }
