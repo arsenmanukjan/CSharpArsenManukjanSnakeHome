@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpArsenManukjanSnake
 {
-    class Figure : Point
+    class Figure 
     {
         protected List<Point> pList;
 

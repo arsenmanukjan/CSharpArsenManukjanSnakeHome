@@ -26,7 +26,11 @@ namespace CSharpArsenManukjanSnake
             y = p.y;
             sym = p.sym;
         }
-
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
         public void Move(int offset, Direction direction)
         {
             if(direction == Direction.RIGHT)
