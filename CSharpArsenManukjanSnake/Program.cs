@@ -8,6 +8,7 @@ namespace CSharpArsenManukjanSnake
 {
     class Program
     {
+        private static int Score;  // добавил очки (загуглил)
         static void Main(string[] args)
         {
             Console.CursorVisible = false; // убираю мерцающий курсор 
@@ -53,18 +54,25 @@ namespace CSharpArsenManukjanSnake
                 if(snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
+                    Score += 100;   // добавил очки (загуглил)
                     food.Draw();
                 }
                 else
                 {
                     snake.Move();
-                }  
-                snake.HandleKey(); 
-                System.Threading.Thread.Sleep(200);
+                }
+                snake.HandleKey();
+                System.Threading.Thread.Sleep(100);
             }
+            Console.SetCursorPosition(80 / 3, 25 / 2);   // загуглил
+            Console.ForegroundColor = ConsoleColor.Yellow; // загуглил
+            Console.BackgroundColor = ConsoleColor.Red;   // загуглил
+            Console.Write($"Игра окончена!  "); // добавил очки (загуглил)
+            Console.WriteLine($"Очки: { Score}");  
+
+            Console.ReadLine();
         }
     }
-   
 }
 
 
