@@ -52,7 +52,7 @@ namespace CSharpArsenManukjanSnake
         }
         public void Draw()
         {
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(x, y); 
             Console.Write( sym );
         }
         public override string ToString()

@@ -15,6 +15,8 @@ namespace CSharpArsenManukjanSnake
             p1.Draw();
             Console.SetWindowSize(80, 25);  // пришлось добавить, потому что не запускалось с SetBufferSize
             Console.SetBufferSize(80, 25);  // проверка
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
 
             // Отрисовка рамочки
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
@@ -41,9 +43,14 @@ namespace CSharpArsenManukjanSnake
             FoodCreator foodCreator = new FoodCreator(80, 25, '@');
             Point food = foodCreator.CreateFood();
             food.Draw();
+
             while (true)
             {
-                if (snake.Eat(food))
+                if (walls.IsHit(snake) || snake.IsHitTail() )
+                {
+                    break;
+                }
+                if(snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
@@ -51,8 +58,7 @@ namespace CSharpArsenManukjanSnake
                 else
                 {
                     snake.Move();
-
-                }
+                }  
                 snake.HandleKey(); 
                 System.Threading.Thread.Sleep(200);
             }
